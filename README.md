@@ -9,7 +9,7 @@ in the same directory as the project, like [PHP Composer][3] did.
 
     mkdir myproject
     cd myproject
-    wget -O pip.zip https://github.com/k4ml/pipz/releases/download/v0.1/pip.zip
+    wget -O pip.zip https://bit.ly/pipzip
     python pip.zip install -t vendor Django
     PYTHONPATH=vendor python
     >>> import django
