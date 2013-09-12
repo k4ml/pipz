@@ -1,0 +1,5 @@
+pip.zip
+setuptools
+pip
+pkg_resources.py
+*.pyc
