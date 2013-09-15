@@ -3,7 +3,7 @@ SETUPTOOLS_VERSION := 1.1.4
 PIP_DIR := pip-$(PIP_VERSION)
 SETUPTOOLS_DIR := setuptools-$(SETUPTOOLS_VERSION)
 
-zip:
+deps:
 	wget https://pypi.python.org/packages/source/p/pip/pip-$(PIP_VERSION).tar.gz
 	wget https://pypi.python.org/packages/source/s/setuptools/setuptools-$(SETUPTOOLS_VERSION).tar.gz 
 	tar xzf pip-$(PIP_VERSION).tar.gz
@@ -13,4 +13,9 @@ zip:
 	mv $(SETUPTOOLS_DIR)/setuptools .
 	mv $(SETUPTOOLS_DIR)/pkg_resources.py .
 	rm -rf pip-* setuptools-*
+
+patch:
+	cd pip && patch < ../patches/pip-cacert.patch
+
+zip: deps patch
 	zip -r pip.zip *

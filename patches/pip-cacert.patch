@@ -1,0 +1,16 @@
+--- pip/locations.py	2013-08-08 00:38:52.000000000 +0000
++++ patches/locations.py	2013-09-15 23:06:50.284606981 +0000
+@@ -9,7 +9,12 @@
+ from pip.backwardcompat import get_python_lib
+ import pip.exceptions
+ 
+-default_cert_path = os.path.join(os.path.dirname(__file__), 'cacert.pem')
++import pkg_resources
++
++cert_contents = pkg_resources.resource_string(__name__, 'cacert.pem')
++default_cert_path = tempfile.mkstemp(suffix='pip-cacert')[1]
++with open(default_cert_path, 'w') as fp:
++    fp.write(cert_contents)
+ 
+ DELETE_MARKER_MESSAGE = '''\
+ This file is placed here by pip to indicate the source was put
