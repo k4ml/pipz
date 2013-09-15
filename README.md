@@ -1,3 +1,5 @@
+[ Unless issue #3 get fixed, this project is dead by now :( ]
+
 [PIP][1] is a life saver when you need a bunch of python packages for your 
 project. But [setting up pip][2] is quite a task in itself. This tool simply 
 bundle pip and it's dependencies setuptools in single zip file.
