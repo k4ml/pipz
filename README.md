@@ -11,7 +11,7 @@ in the same directory as the project, like [PHP Composer][3] did.
 
     mkdir myproject
     cd myproject
-    wget -O pip.zip https://bit.ly/pipzip
+    wget -O pip.zip https://bit.ly/pipzip-02
     python pip.zip install -t vendor Django
     PYTHONPATH=vendor python
     >>> import django
